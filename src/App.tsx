@@ -71,13 +71,6 @@ export default function App() {
     </div>
   );
 
-  const scrollCue = (
-    <a href="#scroll-content" className="scroll-cue hover:text-cyan-700 transition-colors">
-      <span>向下浏览项目与技能</span>
-      <ChevronDown className="w-4 h-4 animate-bounce" />
-    </a>
-  );
-
   return (
     <div className="page-bg min-h-screen text-slate-800 selection:bg-cyan-100 flex flex-col font-sans">
       <header id="main-header" className="sticky top-0 z-40 bg-transparent border-b border-white/25">
@@ -102,7 +95,7 @@ export default function App() {
       </header>
 
       <main className="flex-1">
-        <AboutMe chatSlot={chatSlot} scrollCue={scrollCue} />
+        <AboutMe chatSlot={chatSlot} />
       </main>
 
       <footer className="bg-transparent border-t border-white/25 py-6">

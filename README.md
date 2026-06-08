@@ -1,20 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 辛柯个人主页 · AI 数字分身
 
-# Run and deploy your AI Studio app
+React + Express 个人作品集站点，内置 Gemini 驱动的数字分身对话。
 
-This contains everything you need to run your app locally.
+## 本地开发
 
-View your app in AI Studio: https://ai.studio/apps/e42e80e5-15ad-4038-a999-29b311373b2f
+**前置条件：** Node.js 18+
 
-## Run Locally
+1. 安装依赖：
+   ```bash
+   npm install
+   ```
+2. 复制环境变量并填入 Gemini API Key：
+   ```bash
+   cp .env.example .env
+   ```
+   在 `.env` 中设置 `GEMINI_API_KEY=你的密钥`
+3. 启动开发服务器：
+   ```bash
+   npm run dev
+   ```
+4. 浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-**Prerequisites:**  Node.js
+## 生产构建
 
+```bash
+npm run build
+NODE_ENV=production npm start
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Render 部署
+
+1. 将代码推送到 GitHub 仓库
+2. 登录 [Render](https://render.com)，用 GitHub 授权
+3. **New → Web Service**，选择本仓库
+4. 配置：
+   - **Build Command:** `npm install && npm run build`
+   - **Start Command:** `NODE_ENV=production npm start`
+   - **Environment Variables:**
+     - `NODE_ENV` = `production`
+     - `GEMINI_API_KEY` = 你的 Gemini API Key
+5. 点击 Deploy，等待完成后访问 Render 提供的 URL
+
+也可使用仓库根目录的 [`render.yaml`](render.yaml) 进行 Blueprint 部署。
+
+## 环境变量
+
+| 变量 | 说明 |
+|------|------|
+| `GEMINI_API_KEY` | Google Gemini API 密钥（数字分身聊天必需） |
+| `PORT` | 服务端口，云托管平台会自动注入 |
+| `NODE_ENV` | 生产环境设为 `production` |

@@ -11,7 +11,6 @@ import {
   CheckCircle2, 
   BookOpen, 
   Check, 
-  Terminal,
   Activity,
   UserCheck,
   GraduationCap,
@@ -27,10 +26,52 @@ import LinhaiPortfolioModal from "./LinhaiPortfolioModal";
 
 interface AboutMeProps {
   chatSlot?: React.ReactNode;
-  scrollCue?: React.ReactNode;
 }
 
-export default function AboutMe({ chatSlot, scrollCue }: AboutMeProps) {
+const SECTION_TITLES = new Set(["项目背景", "负责项目", "项目成果"]);
+
+const renderDescription = (text: string) => {
+  let sectionIndex = 0;
+
+  return (
+  <div className="flex flex-col gap-1">
+    {text.split("\n").map((line, lineIdx) => {
+      const trimmed = line.trim();
+      if (!trimmed) return null;
+
+      if (SECTION_TITLES.has(trimmed)) {
+        sectionIndex += 1;
+        return (
+          <span
+            key={lineIdx}
+            className={`block font-bold text-slate-900 text-sm md:text-base leading-snug ${
+              sectionIndex > 1 ? "mt-5" : ""
+            }`}
+          >
+            {trimmed}
+          </span>
+        );
+      }
+
+      return (
+        <span key={lineIdx} className="block leading-snug text-slate-600">
+          {line.split(/(\*\*[^*]+\*\*)/g).map((part, partIdx) =>
+            part.startsWith("**") && part.endsWith("**") ? (
+              <span key={partIdx} className="font-semibold text-slate-900">
+                {part.slice(2, -2)}
+              </span>
+            ) : (
+              <span key={partIdx}>{part}</span>
+            )
+          )}
+        </span>
+      );
+    })}
+  </div>
+  );
+};
+
+export default function AboutMe({ chatSlot }: AboutMeProps) {
   const [jargonModes, setJargonModes] = useState<Record<string, "tech" | "colloquial">>({
     "proj-1": "tech",
     "proj-2": "tech",
@@ -193,8 +234,6 @@ export default function AboutMe({ chatSlot, scrollCue }: AboutMeProps) {
             </div>
           )}
         </div>
-
-        {scrollCue}
       </section>
 
       {/* Below the fold: projects & skills */}
@@ -238,8 +277,8 @@ export default function AboutMe({ chatSlot, scrollCue }: AboutMeProps) {
                   </div>
 
                   {/* Dynamic Content switching according to the toggle */}
-                  <div className="relative min-h-[96px] glass-nested-panel rounded-lg p-4 transition-all duration-300">
-                    <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono font-medium tracking-wide uppercase rounded-md glass-chip select-none">
+                  <div className="relative glass-nested-panel rounded-lg px-4 py-3.5 pr-20 transition-all duration-300">
+                    <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono font-medium tracking-wide uppercase rounded-md glass-chip select-none">
                       <span className={`h-1.5 w-1.5 rounded-full ${isColloquial ? 'bg-cyan-500' : 'bg-slate-500'}`}></span>
                       <span className={isColloquial ? 'text-cyan-700' : 'text-slate-600'}>
                         {isColloquial ? "大白话" : "专业版"}
@@ -252,19 +291,13 @@ export default function AboutMe({ chatSlot, scrollCue }: AboutMeProps) {
                           <Smile className="w-3.5 h-3.5 text-cyan-600" />
                           大白话解读
                         </span>
-                        <p className="text-sm text-slate-700 font-sans leading-relaxed">
+                        <p className="text-sm text-slate-700 font-sans leading-[1.75]">
                           “{proj.simpleExpl}”
                         </p>
                       </div>
                     ) : (
-                      <div className="space-y-1.5">
-                        <span className="inline-block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
-                          <Terminal className="w-3.5 h-3.5 text-slate-600" />
-                          项目说明
-                        </span>
-                        <p className="text-xs md:text-sm text-slate-600 font-sans leading-relaxed">
-                          {proj.description}
-                        </p>
+                      <div className="text-xs md:text-sm font-sans">
+                        {renderDescription(proj.description)}
                       </div>
                     )}
                   </div>

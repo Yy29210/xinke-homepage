@@ -101,7 +101,7 @@ export default function CloneChat({ onCollapse }: CloneChatProps) {
     {
       id: "welcome",
       role: "assistant",
-      content: "👋 你好呀！我是辛柯的 AI 知识分身。\n\n你可以把我当成他本人。我非常了解他做过的 4 个大模型实习项目、他在低代码/数据标注上的沉淀，以及最富特色的“大白话”翻译理念！\n\n你可以测试我的回复，不管是打探他的实习细节，还是向我挑战更难的技术黑话，我都会努力给你“讲人话”解答。建议你可以点击下面的快捷按钮直接开启我们俩的聊天喔！👇",
+      content: "嘿，我是辛柯的数字分身 👋\n\n想打听他最近在干嘛、做过啥项目、怎么联系他——问我就行。我会尽量讲人话，不装懂。\n\n拿不准的我不会瞎编，会直接让你去找本人确认。下面几个快捷问题可以先点着玩～",
       timestamp: new Date()
     }
   ]);
@@ -156,10 +156,10 @@ export default function CloneChat({ onCollapse }: CloneChatProps) {
 
   // Preset smart response database (vernacular, non-jargon)
   const LOCAL_RESPONSES: Record<string, string> = {
-    "current_status": "我目前主要在忙两件事，都很充实：\n- **第一，精进我的 AI 技能**。我当前正在努力从一个简单的‘AI 训练协助者’，精进化并转型为真正能够洞察用户细节痛点，并把大模型、API 和自动化工具串起来解决问题的 **AI 产品探索者**。\n- **第二，高强度整理实习项目并搭建这间主页**。也就是你在左侧区域看到的过往 **4 个 AI 相关项目**。希望能在这个小天地里，把过去敲掉头发做出来的成果，原汁原味地分享给每一位朋友、面试官和潜在合作伙伴。\n\n这也是我探索数字分身的第一步，你可以继续在下方挑选其他预设问题，我随时在线等候哈！😄",
-    "projects_info": "哈哈，说到我过往在实习中倾尽心血做好的这 4 个作品，那我真是有一肚子话可以说：\n- **1. 智谱—PPT skills 评测**：深度参与大模型及 Agent 在 PPT 创作、排版及格式生成能力上的高精度评测，制定打分细则与考集摸底测试，搜集 Bad Case 对齐迭代，不断提高并对准核心模型在高质量办公场景下的高保真排版呈现质量！\n- **2. 百度-AI 训练师**：类似给数据做‘大扫除’。大语言模型也要吃干净的‘健康细粮’才会聪明。我搭建了高效过滤、清洗语料的自动过滤和语义打标管道，剔除敏感、乱码和脏广告，给算法团队产出最干净的高保真数据集。\n- **3. 视觉设计智能生成平台**：很多人不会写长篇繁琐英文 Prompt，我把 Midjourney/SD 底层参数打包成简单中文勾选项，运营同学只需在工具点配‘科技深蓝’、‘扁平插画’，一秒出媲美大厂的原画参考，彻底释放设计排期压力！\n- **4. 企业级知识整理 RAG 智能体**：像是公司的‘高情商图书馆新版管理员’。新入职员工或者翻阅手册不想在大海捞针，像拉家常一样问它，它精准咬住页数并翻译成好听直白的大白话教你流程。\n\n你还可以选择在左侧卡片点击【翻译成大白话】按钮，检验一下我讲人话的沟通实力哦！",
-    "contacts_info": `要一步找我本人开撩或提议面试？那太棒了！随时用以下两种最实在、最直接的方式呼唤我：\n- 📧 **电子邮箱**：[yinguoqing615@gmail.com](mailto:yinguoqing615@gmail.com) —— 每天都会开着手机通知高频查收，最建议发邮件给我，谈合作或推荐入职都极大欢迎！\n- 💬 **加我微信号**：**${PROFILE_INFO.wechat}** —— 这是我个人一直用的微信账号，直接复制或者点击右上角‘加我微信’气泡即可，记得备注‘主页访客’让我看到你哈！\n\n随时留言，看到肯定第一时间真诚秒回！`,
-    "jargon_philosophy": "因为在这个大家都喜欢疯狂搬弄‘RAG 架构、Agent 涌现、端侧对齐、大模型智能范式’等生涩英文与高级黑话的时代，我发现**最珍稀的，反而是把高大上的科技术语剥开、用买菜大娘都能听懂的大白话翻译出来的能力**。\n\n听得懂，工具才实实在在能用起来；讲人话，代码才会有源源不断的温度，而不会变成闷在象牙塔里的冷酷机器。这就是我作为一个‘AI 训练师’想一直精进并做好的初心。讨厌装，只说接地气的干货人话！"
+    "current_status": "最近在忙这几件事，说实话有点上头：\n- **整理 AI 项目**，把实习做过的东西捋清楚\n- **从 0 到 1 鼓捣这个个人站**（你现在正在逛的）\n- **用 AI 做产品**，边学边试\n- **学 vibecoding**，写代码这件事也想玩得更顺一点\n\n主页左边有 4 个实习项目卡片，想深挖哪个可以继续问我～",
+    "projects_info": "实习做过 4 个项目，给你一分钟版：\n- **智谱 PPT 评测**：当大模型的 PPT 考官，抓排版烂、格式乱的 Bad Case\n- **百度 AI 训练师**：给脏数据做大扫除，洗出能喂模型的干净语料\n- **天际汽车 UI**：用 MJ/SD 做小工具，运营勾选风格就能出图\n- **来未来 UI**：医疗数据可视化大屏、动效、移动端与品牌物料设计\n\n想听大白话版，去左边卡片点「切换大白话」～",
+    "contacts_info": `想找本人？最直接就这两条路：\n- 📧 **邮箱**：[yinguoqing615@gmail.com](mailto:yinguoqing615@gmail.com)\n- 💬 **微信**：**${PROFILE_INFO.wechat}**（备注「主页访客」就行）\n\n谈合作、聊 AI、随便唠都行，他看到会回的。`,
+    "ai_interests": "我长期盯这几块：\n- **AI 前沿资讯**——新模型、新工具出了啥，会追着看\n- **行业发展动态**——AI 怎么落地、谁在真干活\n\n具体某家公司内幕、某模型参数细节这种，我没法替本人打包票，拿不准的建议你直接问他本人哈。"
   };
 
   const matchLocalIntent = (text: string): string | null => {
@@ -175,8 +175,8 @@ export default function CloneChat({ onCollapse }: CloneChatProps) {
     if (clean.includes("联系") || clean.includes("合作") || clean.includes("联系你") || clean.includes("邮箱") || clean.includes("微信")) {
       return "contacts_info";
     }
-    if (clean.includes("人话") || clean.includes("复杂问题") || clean.includes("特点") || clean.includes("特点是") || clean.includes("特点？")) {
-      return "jargon_philosophy";
+    if (clean.includes("关注") || clean.includes("前沿") || clean.includes("资讯") || clean.includes("行业") || clean.includes("擅长") || clean.includes("兴趣")) {
+      return "ai_interests";
     }
     return null;
   };
@@ -294,7 +294,7 @@ export default function CloneChat({ onCollapse }: CloneChatProps) {
         {
           id: "welcome",
           role: "assistant",
-          content: "对话已经重新启动！我是辛柯的数字分身，您可以继续点击建议问题，或者随便找我唠嗑！",
+          content: "对话重置啦～我是辛柯的数字分身，继续问就行，拿不准的我不会瞎编。",
           timestamp: new Date()
         }
       ]);
