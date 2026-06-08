@@ -1,0 +1,6 @@
+{
+  "name": "辛柯的个人主页",
+  "description": "阴国庆-辛柯的个人主页与 AI 数字分身互动聊天平台",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

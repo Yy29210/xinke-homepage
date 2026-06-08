@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: #1e293b;
+  }
+}
+
+@layer components {
+  .page-bg {
+    position: relative;
+    isolation: isolate;
+    background-color: #bae6fd;
+  }
+
+  .page-bg::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: url("/images/hero-beach-bg.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  .page-bg::after {
+    content: none;
+  }
+
+  .surface-card {
+    @apply rounded-xl overflow-hidden;
+    background: rgb(255 255 255 / 0.44);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgb(255 255 255 / 0.68);
+    box-shadow:
+      0 10px 32px rgb(15 23 42 / 0.08),
+      0 2px 8px rgb(15 23 42 / 0.04),
+      inset 0 1px 0 rgb(255 255 255 / 0.8);
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .surface-card:hover {
+    background: rgb(255 255 255 / 0.52);
+    border-color: rgb(255 255 255 / 0.78);
+    box-shadow:
+      0 14px 36px rgb(15 23 42 / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.85);
+  }
+
+  .glass-nested-panel {
+    background: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgb(255 255 255 / 0.48);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.52);
+  }
+
+  .glass-card-footer {
+    background: rgb(255 255 255 / 0.24);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(255 255 255 / 0.42);
+  }
+
+  .glass-divider {
+    border-color: rgb(255 255 255 / 0.42);
+  }
+
+  .section-eyebrow {
+    @apply text-[10px] font-mono font-medium tracking-[0.18em] uppercase text-cyan-700/80;
+  }
+
+  .section-title {
+    @apply text-lg md:text-xl font-semibold tracking-tight text-slate-900;
+  }
+
+  .meta-tile {
+    @apply flex items-center gap-3.5 bg-slate-50/80 hover:bg-slate-50 p-3.5 rounded-lg border border-slate-200/60 transition-colors duration-150;
+  }
+
+  .meta-icon {
+    @apply p-2 bg-white text-slate-600 rounded-lg shrink-0 border border-slate-200/80;
+  }
+
+  .tag-pill {
+    @apply px-2 py-0.5 text-xs font-sans text-slate-600 rounded-md;
+    background: rgb(255 255 255 / 0.36);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgb(255 255 255 / 0.48);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.45);
+  }
+
+  .hero-cta-primary {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors duration-150 cursor-pointer select-none;
+  }
+
+  .hero-cta-secondary {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 border border-slate-200/80 rounded-lg transition-colors duration-150 cursor-pointer select-none;
+  }
+
+  .chat-panel {
+    @apply rounded-xl p-3 md:p-4;
+    background: rgb(255 255 255 / 0.28);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgb(255 255 255 / 0.55);
+    box-shadow:
+      0 8px 28px rgb(15 23 42 / 0.07),
+      inset 0 1px 0 rgb(255 255 255 / 0.72),
+      inset 0 -1px 0 rgb(255 255 255 / 0.12);
+  }
+
+  .chat-panel-featured {
+    @apply rounded-2xl p-4 md:p-5 flex flex-col h-full min-h-0 relative overflow-hidden;
+    background: rgb(255 255 255 / 0.24);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid rgb(255 255 255 / 0.58);
+    box-shadow:
+      0 12px 40px rgb(15 23 42 / 0.1),
+      0 4px 12px rgb(15 23 42 / 0.05),
+      inset 0 1px 0 rgb(255 255 255 / 0.78),
+      inset 0 -1px 0 rgb(255 255 255 / 0.14);
+  }
+
+  .glass-card-inner {
+    @apply rounded-xl flex flex-col h-full min-h-[360px] relative overflow-hidden min-w-0 overscroll-contain;
+    background: rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.35);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.45);
+  }
+
+  .glass-bar {
+    background: rgb(255 255 255 / 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: rgb(255 255 255 / 0.38);
+  }
+
+  .glass-scroll {
+    background: rgb(255 255 255 / 0.08);
+  }
+
+  .glass-bubble-bot {
+    background: rgb(255 255 255 / 0.42);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgb(255 255 255 / 0.5);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55);
+  }
+
+  .glass-bubble-user {
+    background: rgb(8 145 178 / 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgb(255 255 255 / 0.28);
+    box-shadow:
+      0 4px 14px rgb(8 145 178 / 0.22),
+      inset 0 1px 0 rgb(255 255 255 / 0.22);
+  }
+
+  .glass-chip {
+    background: rgb(255 255 255 / 0.38);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgb(255 255 255 / 0.48);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5);
+  }
+
+  .glass-chip:hover {
+    background: rgb(255 255 255 / 0.52);
+    border-color: rgb(103 232 249 / 0.45);
+  }
+
+  .glass-input {
+    background: rgb(255 255 255 / 0.42);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgb(255 255 255 / 0.52);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55);
+  }
+
+  .glass-input:focus {
+    background: rgb(255 255 255 / 0.55);
+    border-color: rgb(34 211 238 / 0.55);
+    box-shadow:
+      0 0 0 3px rgb(34 211 238 / 0.12),
+      inset 0 1px 0 rgb(255 255 255 / 0.6);
+  }
+
+  .glass-icon-dark {
+    background: rgb(15 23 42 / 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgb(255 255 255 / 0.18);
+    box-shadow:
+      0 4px 16px rgb(15 23 42 / 0.18),
+      inset 0 1px 0 rgb(255 255 255 / 0.12);
+  }
+
+  .glass-badge {
+    background: rgb(255 255 255 / 0.34);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgb(255 255 255 / 0.5);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55);
+  }
+
+  .glass-collapsed-tab {
+    background: rgb(255 255 255 / 0.48);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgb(255 255 255 / 0.72);
+    box-shadow:
+      0 10px 32px rgb(15 23 42 / 0.08),
+      0 2px 8px rgb(15 23 42 / 0.04),
+      inset 0 1px 0 rgb(255 255 255 / 0.85),
+      inset 0 -1px 0 rgb(255 255 255 / 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .glass-collapsed-tab:hover {
+    background: rgb(255 255 255 / 0.58);
+    border-color: rgb(255 255 255 / 0.82);
+    box-shadow:
+      0 14px 36px rgb(15 23 42 / 0.1),
+      0 4px 12px rgb(15 23 42 / 0.05),
+      inset 0 1px 0 rgb(255 255 255 / 0.9),
+      inset 0 -1px 0 rgb(255 255 255 / 0.24);
+  }
+
+  .hero-screen {
+    @apply min-h-[calc(100dvh-4rem)] flex flex-col max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative;
+  }
+
+  .scroll-content {
+    @apply py-14 md:py-20;
+    background: transparent;
+  }
+
+  .scroll-cue {
+    @apply flex flex-col items-center gap-1.5 text-[11px] font-mono text-slate-400 pb-6 pt-2;
+  }
+
+  .meta-tile-compact {
+    @apply flex items-center gap-2.5 bg-slate-50/60 p-2.5 rounded-lg border border-slate-200/60;
+  }
+
+  .meta-stats-bar {
+    @apply grid grid-cols-2 md:grid-cols-4 w-full rounded-xl overflow-hidden divide-x divide-y md:divide-y-0 divide-white/40;
+    background: rgb(255 255 255 / 0.42);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid rgb(255 255 255 / 0.62);
+    box-shadow:
+      0 6px 24px rgb(15 23 42 / 0.06),
+      inset 0 1px 0 rgb(255 255 255 / 0.72);
+  }
+
+  .meta-stat {
+    @apply flex flex-col items-center justify-center text-center px-3 py-3 min-h-[4.5rem];
+  }
+}
