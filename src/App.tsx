@@ -6,39 +6,53 @@
 import React, { useState } from "react";
 import AboutMe from "./components/AboutMe";
 import CloneChat from "./components/CloneChat";
+import BorderGlow from "./components/BorderGlow";
 import { MessageSquare, Terminal, Heart, ChevronDown } from "lucide-react";
 
 export default function App() {
   const [isChatExpanded, setIsChatExpanded] = useState(true);
 
   const chatSlot = isChatExpanded ? (
-    <div className="chat-panel-featured gap-4">
-      <div className="shrink-0 space-y-2">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="glass-icon-dark w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
-              <MessageSquare className="w-5 h-5 text-cyan-300" />
+    <BorderGlow
+      className="chat-border-glow h-full"
+      edgeSensitivity={53}
+      glowColor="40 80 80"
+      backgroundColor="transparent"
+      borderRadius={36}
+      glowRadius={2}
+      glowIntensity={0.5}
+      coneSpread={18}
+      colors={["#c084fc", "#f472b6", "#38bdf8"]}
+      fillOpacity={0}
+    >
+      <div className="chat-panel-featured gap-4">
+        <div className="shrink-0 space-y-2">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="glass-icon-dark w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
+                <MessageSquare className="w-5 h-5 text-cyan-300" />
+              </div>
+              <div className="min-w-0">
+                <span className="section-eyebrow">AI Digital Twin</span>
+                <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900 leading-tight">
+                  对话数字分身
+                </h2>
+              </div>
             </div>
-            <div className="min-w-0">
-              <span className="section-eyebrow">AI Digital Twin</span>
-              <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900 leading-tight">
-                对话数字分身
-              </h2>
-            </div>
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-700 glass-badge px-2 py-1 rounded-full shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              Online
+            </span>
           </div>
-          <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono text-emerald-700 glass-badge px-2 py-1 rounded-full shrink-0">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Online
-          </span>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            像和本人聊天一样，了解项目经历、技能方向与合作方式
+          </p>
         </div>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          像和本人聊天一样，了解项目经历、技能方向与合作方式
-        </p>
+        <div className="flex-1 min-h-0">
+          <CloneChat onCollapse={() => setIsChatExpanded(false)} />
+        </div>
       </div>
-      <div className="flex-1 min-h-0">
-        <CloneChat onCollapse={() => setIsChatExpanded(false)} />
-      </div>
-    </div>
+    </BorderGlow>
   ) : (
     <div className="flex flex-col gap-4 h-full justify-center">
       <button

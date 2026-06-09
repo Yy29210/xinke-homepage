@@ -203,26 +203,31 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
                 </button>
               </div>
 
-              <p id="bio-intro" className="w-full text-sm md:text-[15px] text-[#243b53] font-medium leading-[1.8] line-clamp-4">
-                {PROFILE_INFO.intro}
-              </p>
+              <div
+                id="profile-detail-zone"
+                className="profile-detail-zone text-[0.9375rem] w-[50.5em] max-w-full box-border"
+              >
+                <p id="bio-intro" className="text-[0.9375rem] text-[#243b53] font-medium leading-[1.8]">
+                  {PROFILE_INFO.intro}
+                </p>
 
-              <div id="quick-meta" className="meta-stats-bar">
-                <div className="meta-stat">
-                  <span className="text-[10px] text-slate-400 mb-1.5 leading-none">学校</span>
-                  <span className="text-xs font-medium text-slate-700 leading-snug">四川电影电视学院</span>
-                </div>
-                <div className="meta-stat">
-                  <span className="text-[10px] text-slate-400 mb-1.5 leading-none">大模型经验</span>
-                  <span className="text-xs font-medium text-slate-700 leading-snug">18 个月</span>
-                </div>
-                <div className="meta-stat">
-                  <span className="text-[10px] text-slate-400 mb-1.5 leading-none">专业</span>
-                  <span className="text-xs font-medium text-slate-700 leading-snug">数字媒体艺术</span>
-                </div>
-                <div className="meta-stat">
-                  <span className="text-[10px] text-slate-400 mb-1.5 leading-none">生年月</span>
-                  <span className="text-xs font-medium text-slate-700 leading-snug">2004 年 9 月</span>
+                <div id="quick-meta" className="meta-stats-bar">
+                  <div className="meta-stat">
+                    <span className="text-[10px] text-slate-400 mb-1.5 leading-none">学校</span>
+                    <span className="text-xs font-medium text-slate-700 leading-snug">四川电影电视学院</span>
+                  </div>
+                  <div className="meta-stat">
+                    <span className="text-[10px] text-slate-400 mb-1.5 leading-none">大模型经验</span>
+                    <span className="text-xs font-medium text-slate-700 leading-snug">18 个月</span>
+                  </div>
+                  <div className="meta-stat">
+                    <span className="text-[10px] text-slate-400 mb-1.5 leading-none">专业</span>
+                    <span className="text-xs font-medium text-slate-700 leading-snug">数字媒体艺术</span>
+                  </div>
+                  <div className="meta-stat">
+                    <span className="text-[10px] text-slate-400 mb-1.5 leading-none">生年月</span>
+                    <span className="text-xs font-medium text-slate-700 leading-snug">2004 年 9 月</span>
+                  </div>
                 </div>
               </div>
             </div>
