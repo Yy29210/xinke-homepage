@@ -117,7 +117,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} 阴国庆（辛柯）</span>
             <span className="text-slate-300">|</span>
-            <span className="font-mono text-[11px] bg-slate-50 px-2 py-0.5 rounded border border-slate-200/70 text-slate-500">v1.1</span>
+            <span className="font-mono text-[11px] bg-slate-50 px-2 py-0.5 rounded border border-slate-200/70 text-slate-500">v1.2</span>
           </div>
           <div className="flex items-center gap-1.5 text-slate-500">
             <span>用大白话把 AI 做到好用</span>
