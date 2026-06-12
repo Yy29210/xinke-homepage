@@ -248,7 +248,6 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
               过往实习的 4 个项目
             </h2>
           </div>
-          <span className="text-xs text-slate-500 hidden sm:block">翻译理念：大道至简</span>
         </div>
 
         <div className="grid grid-cols-1 gap-6">
@@ -386,13 +385,12 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-3">
-            <h3 className="text-xs font-mono font-medium uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-              <span className="glass-chip p-1 rounded text-slate-600"><Code className="w-3.5 h-3.5" /></span>
-              核心 AI 技能
-            </h3>
-            <div className="space-y-2">
+        <div className="space-y-3">
+          <h3 className="text-xs font-mono font-medium uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
+            <span className="glass-chip p-1 rounded text-slate-600"><Code className="w-3.5 h-3.5" /></span>
+            核心 AI 技能
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
               {SKILLS.filter(s => s.category === "core").map((skill) => (
                 <div key={skill.name} className="glass-nested-panel p-3 rounded-lg hover:bg-white/35 transition duration-150">
                   <span className="font-semibold text-xs md:text-sm text-slate-800 block">
@@ -403,27 +401,6 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
                   </span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-xs font-mono font-medium uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-              <span className="glass-chip p-1 rounded text-slate-600"><Smile className="w-3.5 h-3.5" /></span>
-              工作风格与方向
-            </h3>
-            <div className="space-y-2">
-              {SKILLS.filter(s => s.category !== "core").map((skill) => (
-                <div key={skill.name} className="glass-nested-panel p-3 rounded-lg hover:bg-white/35 transition duration-150">
-                  <span className="font-semibold text-xs md:text-sm text-slate-800 block flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-600" />
-                    {skill.name}
-                  </span>
-                  <span className="text-xs text-slate-500 mt-1 block leading-relaxed">
-                    {skill.description}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

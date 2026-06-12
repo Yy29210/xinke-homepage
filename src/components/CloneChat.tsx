@@ -356,12 +356,12 @@ export default function CloneChat({ onCollapse }: CloneChatProps) {
               className={`flex gap-2 max-w-[95%] ${isBot ? "mr-auto" : "ml-auto flex-row-reverse"}`}
             >
               {/* Profile Bubble */}
-              <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border mt-0.5 ${
-                isBot 
-                  ? "bg-slate-800 border-slate-700 text-cyan-200" 
-                  : "bg-cyan-600 border-cyan-500 text-white"
+              <div className={`w-7 h-7 rounded-full shrink-0 mt-0.5 overflow-hidden ${
+                isBot ? "" : "bg-cyan-600 border border-cyan-500 flex items-center justify-center"
               }`}>
-                {isBot ? <Sparkles className="w-3.5 h-3.5" /> : <User className="w-3.5 h-3.5" />}
+                {isBot
+                  ? <img src="/images/avatar.jpg" alt="辛柯" className="w-full h-full object-cover" />
+                  : <User className="w-3.5 h-3.5 text-white" />}
               </div>
 
               {/* Message wrapper */}

@@ -16,8 +16,8 @@ export default function App() {
       <div className="shrink-0 space-y-2">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="glass-icon-dark w-10 h-10 rounded-xl flex items-center justify-center shrink-0">
-              <MessageSquare className="w-5 h-5 text-cyan-300" />
+            <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0">
+              <img src="/images/avatar.jpg" alt="辛柯" className="w-full h-full object-cover" />
             </div>
             <div className="min-w-0">
               <span className="section-eyebrow">AI Digital Twin</span>
@@ -76,8 +76,8 @@ export default function App() {
       <header id="main-header" className="sticky top-0 z-40 bg-transparent border-b border-white/25">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center text-cyan-300 shadow-sm">
-              <Terminal className="w-5 h-5" />
+            <div className="w-9 h-9 rounded-lg overflow-hidden shadow-sm shrink-0">
+              <img src="/images/avatar.jpg" alt="辛柯" className="w-full h-full object-cover" />
             </div>
             <span className="font-sans font-semibold text-slate-900 tracking-tight text-sm md:text-base">
               辛柯
