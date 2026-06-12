@@ -174,11 +174,9 @@
   }
 
   .glass-bubble-bot {
-    background: rgb(255 255 255 / 0.42);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgb(255 255 255 / 0.5);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.55);
+    background: #ffffff;
+    border: 1px solid rgb(255 255 255 / 0.8);
+    box-shadow: 0 2px 8px rgb(15 23 42 / 0.06);
   }
 
   .glass-bubble-user {
