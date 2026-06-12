@@ -73,6 +73,9 @@ export default function App() {
 
   return (
     <div className="page-bg min-h-screen text-slate-800 selection:bg-cyan-100 flex flex-col font-sans">
+      <div className="fixed inset-0 -z-10 bg-[#bae6fd]">
+        <img src="/images/hero-beach-bg.png" alt="" className="w-full h-full object-cover object-bottom" />
+      </div>
       <header id="main-header" className="sticky top-0 z-40 bg-transparent border-b border-white/25">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">

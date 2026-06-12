@@ -254,19 +254,19 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
           {PROJECTS.map((proj) => {
             const isColloquial = jargonModes[proj.id] === "colloquial";
             return (
-              <div 
-                key={proj.id} 
+              <div
+                key={proj.id}
                 id={`project-card-${proj.id}`}
-                className="surface-card transition-all duration-200 overflow-hidden flex flex-col justify-between"
+                className="glass-project-card transition-all duration-200 flex flex-col justify-between"
               >
                 <div className="p-6 space-y-4">
                   {/* Card Header */}
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b glass-divider pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-white/40 pb-4">
                     <div>
                       <h3 className="text-base md:text-lg font-semibold text-slate-900 flex items-center gap-2">
                         {proj.title}
                       </h3>
-                      <p className="text-xs md:text-sm text-slate-600 font-sans mt-1 leading-relaxed">
+                      <p className="text-xs md:text-sm text-slate-700 font-sans mt-1 leading-relaxed">
                         {proj.subtitle}
                       </p>
                     </div>
@@ -376,7 +376,7 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
       </div>
 
       {/* Skills Matrix Area */}
-      <div id="skills-section" className="surface-card p-6 space-y-4">
+      <div id="skills-section" className="glass-project-card p-6 space-y-4">
         <div className="space-y-1">
           <span className="section-eyebrow">Skills</span>
           <h2 className="section-title flex items-center gap-2">
