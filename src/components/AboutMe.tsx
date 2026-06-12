@@ -317,33 +317,40 @@ export default function AboutMe({ chatSlot }: AboutMeProps) {
                     {proj.portfolioUrl && (
                       <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">
                         {proj.id === "proj-4" ? (
-                          <button 
+                          <button
                             onClick={() => setIsLinhaiOpen(true)}
-                            className="glass-chip inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-medium text-slate-700 rounded-lg transition-all duration-150 cursor-pointer select-none text-left"
+                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-sans font-semibold text-white rounded-lg transition-all duration-150 cursor-pointer select-none text-left"
+                            style={{
+                              background: "linear-gradient(135deg, rgba(56,132,255,0.72) 0%, rgba(59,118,255,0.65) 100%)",
+                              backdropFilter: "blur(10px)",
+                              WebkitBackdropFilter: "blur(10px)",
+                              border: "1px solid rgba(120,180,255,0.55)",
+                              boxShadow: "0 2px 12px rgba(59,118,255,0.28), inset 0 1px 0 rgba(255,255,255,0.35)"
+                            }}
                             title="点击展开临海医共体智慧大脑界面设计作品集"
                           >
-                            <ExternalLink className="w-3.5 h-3.5 text-cyan-600" />
+                            <ExternalLink className="w-3.5 h-3.5 text-white/90" />
                             <span>浏览作品集</span>
                           </button>
                         ) : (
-                          <a 
+                          <a
                             href={customLinks[proj.id] || proj.portfolioUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass-chip inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-sans font-medium text-slate-700 rounded-lg transition-all duration-150 cursor-pointer select-none"
+                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-sans font-semibold text-white rounded-lg transition-all duration-150 cursor-pointer select-none"
+                            style={{
+                              background: "linear-gradient(135deg, rgba(56,132,255,0.72) 0%, rgba(59,118,255,0.65) 100%)",
+                              backdropFilter: "blur(10px)",
+                              WebkitBackdropFilter: "blur(10px)",
+                              border: "1px solid rgba(120,180,255,0.55)",
+                              boxShadow: "0 2px 12px rgba(59,118,255,0.28), inset 0 1px 0 rgba(255,255,255,0.35)"
+                            }}
                             title="点击跳转浏览作品集 PDF"
                           >
-                            <ExternalLink className="w-3.5 h-3.5 text-cyan-600" />
+                            <ExternalLink className="w-3.5 h-3.5 text-white/90" />
                             <span>查看作品集</span>
                           </a>
                         )}
-                        <button
-                          onClick={() => handleEditLink(proj.id, proj.title)}
-                          className="p-1.5 text-slate-500 hover:text-sky-600 glass-chip rounded-lg transition duration-150 cursor-pointer"
-                          title="点击替换为您自己的作品集外部链接"
-                        >
-                          <Edit3 className="w-3.5 h-3.5" />
-                        </button>
                       </div>
                     )}
                   </div>
